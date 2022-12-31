@@ -1,0 +1,132 @@
+{
+  "version": 1,
+  "dependencies": {
+    ".NETFramework,Version=v4.6.2": {
+      "BepInEx.Core": {
+        "type": "Direct",
+        "requested": "[5.4.19, 5.4.19]",
+        "resolved": "5.4.19",
+        "contentHash": "2/eY1qT2LaVO36G91LWo2yNLwmEEODKoC8IpePyA5WP2eGrrMvGxxLC9v4OPmX3IT8q1G4SYzKDL3ziZRQVUWg==",
+        "dependencies": {
+          "BepInEx.BaseLib": "5.4.19",
+          "HarmonyX": "2.7.0"
+        }
+      },
+      "Digitalroot.Valheim.Build.Targets": {
+        "type": "Direct",
+        "requested": "[1.0.21, )",
+        "resolved": "1.0.21",
+        "contentHash": "8mErk3UFjy80d9IlTjXNsofT7YfKLz897YE10ieB/SHNbBorzwVCPYRGsmuaNH8HyqjKQH3KnK4gDwDMBEC+DQ=="
+      },
+      "Digitalroot.Valheim.Common.AssemblyInfo": {
+        "type": "Direct",
+        "requested": "[1.0.12, )",
+        "resolved": "1.0.12",
+        "contentHash": "W/IFiAuY63JPQEC9/HRJSeEuJY9oJqmhOBecyrmzUCOz4wxJjROpOrqy9c3QiC7NZdhftnUiVGju71Aa0xIJYg=="
+      },
+      "Digitalroot.Valheim.Common.Log": {
+        "type": "Direct",
+        "requested": "[1.1.37, )",
+        "resolved": "1.1.37",
+        "contentHash": "bjsuoXXVAPNIG9AzRBM6IjELDugfpbKrQUvkLYZdguAAQuon3tkXlSw9Qs2FEUDA5BM2vw+kDGGI/QBweoIltw==",
+        "dependencies": {
+          "Digitalroot.Valheim.Common.Json": "1.0.27"
+        }
+      },
+      "Digitalroot.Valheim.Common.Names": {
+        "type": "Direct",
+        "requested": "[1.4.13, )",
+        "resolved": "1.4.13",
+        "contentHash": "YXmgzsL6n6BpbNSq88gfaqX7+aTnR1cxc1FGis95BJnfS2Oc1LEDBDb5LdVzX2TjXGc2bo4a5dc+boDLE2buKg==",
+        "dependencies": {
+          "Digitalroot.Valheim.Common.Utils": "1.0.21"
+        }
+      },
+      "Digitalroot.Valheim.Common.References": {
+        "type": "Direct",
+        "requested": "[0.212.16, )",
+        "resolved": "0.212.16",
+        "contentHash": "DPwx7/H5lUqEELUExNOT5WbEpjSrZ28dEP3hqwWkWeTRQWFThqBE2FNUSMjFu7DDpoqyiz/LHFKd8fa/SnAQvw=="
+      },
+      "Digitalroot.Valheim.Common.Utils": {
+        "type": "Direct",
+        "requested": "[1.0.40, )",
+        "resolved": "1.0.40",
+        "contentHash": "d3YWfPKjf2TODZA2xZK0Tp07LvawkfCQMgmISsZm68zetj6PSRFXwC2QIZBbSw3JLC9e7o1+kROEQ5tljUTchw==",
+        "dependencies": {
+          "Digitalroot.Valheim.Common.Log": "1.1.37"
+        }
+      },
+      "ErrorProne.NET.CoreAnalyzers": {
+        "type": "Direct",
+        "requested": "[0.1.2, )",
+        "resolved": "0.1.2",
+        "contentHash": "RQdzUtFVhwLwisP2Du7Ugm7ldwAzc+QJrlZWNIwHXcgq4b5fLwZgdN1203RdYiHS8OOALophC6yWekxu3UgN2g=="
+      },
+      "Fody": {
+        "type": "Direct",
+        "requested": "[6.6.0, 6.6.0]",
+        "resolved": "6.6.0",
+        "contentHash": "NWWM8KiR9DGiAi47q9px9oI27xYBiM5KXxSnI4R5mz2/rG8LIcXJfw5zDLLH1xOgzqRNJgc8KTPQPoiQCidYUw=="
+      },
+      "ILMerge.Fody": {
+        "type": "Direct",
+        "requested": "[1.22.0, 1.22.0]",
+        "resolved": "1.22.0",
+        "contentHash": "VCWQM8q7wZwHMgksBsFfbImRUmlgn7E6EKkrnUV86/keqBvMTjhlA7mBYtz6Dace8XsJYufYJvRP25uur5W5WA==",
+        "dependencies": {
+          "Fody": "6.3.0"
+        }
+      },
+      "BepInEx.BaseLib": {
+        "type": "Transitive",
+        "resolved": "5.4.19",
+        "contentHash": "gwP3NK0WL5E+U/L0FMrygiDDNzEL4TYnezy+S7ocbUUhkhty3ueG5BRsKdKdra/2R3vWopf42CoA+MnnEmSY+w=="
+      },
+      "Digitalroot.Valheim.Common.Json": {
+        "type": "Transitive",
+        "resolved": "1.0.27",
+        "contentHash": "QMSuHHNyU6vrKQ2jEs6Gd9uLLzzKSGqzIRGdZD4JNL150SExUTPlvS3HIl3YM+B5lU2HZgZnuK+Gt6cyEE76GQ==",
+        "dependencies": {
+          "Digitalroot.Valheim.Common.References": "0.212.16",
+          "fastJSON": "2.4.0.4"
+        }
+      },
+      "fastJSON": {
+        "type": "Transitive",
+        "resolved": "2.4.0.4",
+        "contentHash": "lbxY+miTOvCNbNfOk8HcbmBD9F6wv2dRKZlMjtJBm6rjA5vFKXBYtR6eoIe96HnCHOE1nCJbMsaZDKGNPg5mIA=="
+      },
+      "HarmonyX": {
+        "type": "Transitive",
+        "resolved": "2.7.0",
+        "contentHash": "lec/SkduQspMa3Pi/nM/NSvA84Za8HCCWA8ybdToKiTqnBZa+JC5g6rxoFQCg/1vNuYcvjy77edePZzIEsRmvw==",
+        "dependencies": {
+          "MonoMod.RuntimeDetour": "21.12.13.1"
+        }
+      },
+      "Mono.Cecil": {
+        "type": "Transitive",
+        "resolved": "0.11.4",
+        "contentHash": "IC1h5g0NeJGHIUgzM1P82ld57knhP0IcQfrYITDPXlNpMYGUrsG5TxuaWTjaeqDNQMBDNZkB8L0rBnwsY6JHuQ=="
+      },
+      "MonoMod.RuntimeDetour": {
+        "type": "Transitive",
+        "resolved": "21.12.13.1",
+        "contentHash": "65mB+bHjT6UCGCgO+/pYhpuGPf96rQ1Whwkut/x7cqVIW0DTndDFyWc/3bngzhnY/Y6IYtBMlXsU2ATq+CxpHg==",
+        "dependencies": {
+          "Mono.Cecil": "0.11.4",
+          "MonoMod.Utils": "21.12.13.1"
+        }
+      },
+      "MonoMod.Utils": {
+        "type": "Transitive",
+        "resolved": "21.12.13.1",
+        "contentHash": "/H+0RMWqx/D1/fSuY5jhY6GFvqhdYdlnI7J3IfL8P6y4nJkoZDxqts6+RxWWOz4pbnJdWnxSjS8XG+Lq6rUi7w==",
+        "dependencies": {
+          "Mono.Cecil": "0.11.4"
+        }
+      }
+    }
+  }
+}

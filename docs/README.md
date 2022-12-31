@@ -1,32 +1,14 @@
-Structuring your Thunderstore package
-https://github.com/ebkr/r2modmanPlus/wiki/Structuring-your-Thunderstore-package
+# Better Wisps
 
-Manifest V1 (Thunderstore) + author field
-https://github.com/ebkr/r2modmanPlus/wiki/Installing-mods-locally#manifest-v1-thunderstore--author-field
+## Summary
 
-
-Move me to [gitrepo]/doc
-
-# Summary
-This is a port of <a href="https://www.nexusmods.com/valheim/mods/0000">ModTemplate</a> to JVL   
-PR: https://github.com/Atokal/AtosArrows/pull/3   
-Assets belong to <a href="https://github.com/Atokal" target="_blank">Atokal</a> and are used with permission because of:   
-- Asset use permission You are allowed to use the assets in this file without permission or crediting me. https://www.nexusmods.com/valheim/mods/969 (June 12, 2021)
- 
-Original Mod: https://www.nexusmods.com/valheim/mods/969
-
-**Code is a complete rewrite.**
+Make the Wisp do a better job. 
 
 ## License
-Original source has no license.   
-JVL Version is released under: **GNU Affero General Public License v3.0**
+**GNU Affero General Public License v3.0**
 
-## ModTemplate
-Adds several new arrows into the game. Expands arrow progression for fighting tougher enemies! 
-
-New Items:
-- Stone Arrow
-- Blunted Arrow
+## Details
+Adds upgrade options to the wisp to allow it to clean a larger area of mist.
 
 ### Dependencies
 - <a href="https://valheim.thunderstore.io/package/denikson/BepInExPack_Valheim/"  target="_blank">BepInExPack Valheim</a>
@@ -44,10 +26,11 @@ New Items:
 
 ### Support Me @ https://www.buymeacoffee.com/digitalroot
 
-### Thanks to 
-- <a href="https://github.com/Atokal" target="_blank">Atokal</a>
 
+<hr />
 <p align="center">
-<b>Digitalroot can be found in the Odin Plus Team Discord</b><br />
+<b>Digitalroot can be found in the following Discords</b><br />
+  <a href="https://discord.gg/Xh3UHcDC" target="_blank"><img src="https://digitalroot.net/img/jvldisc.png"></a>
+  <a href="https://discord.gg/randyknappmods" target="_blank"><img src="https://digitalroot.net/img/epiclootdisc.png"></a>
   <a href="https://discord.gg/BHbTumqG7U" target="_blank"><img src="https://digitalroot.net/img/odinplusdisc.png"></a>
 </p>

@@ -36,7 +36,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ico", "ico", "{C66A8E3B-31D
 		ico\ValheimRcon_color.png = ico\ValheimRcon_color.png
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Digitalroot.Valheim.BetterWisps", "Digitalroot.Valheim.BetterWisps\Digitalroot.Valheim.BetterWisps.csproj", "{47DDEEE5-9D45-4627-A324-5DA2A25FCE26}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		DebugNoDeploy|Any CPU = DebugNoDeploy|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47DDEEE5-9D45-4627-A324-5DA2A25FCE26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47DDEEE5-9D45-4627-A324-5DA2A25FCE26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47DDEEE5-9D45-4627-A324-5DA2A25FCE26}.DebugNoDeploy|Any CPU.ActiveCfg = DebugNoDeploy|Any CPU
+		{47DDEEE5-9D45-4627-A324-5DA2A25FCE26}.DebugNoDeploy|Any CPU.Build.0 = DebugNoDeploy|Any CPU
+		{47DDEEE5-9D45-4627-A324-5DA2A25FCE26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47DDEEE5-9D45-4627-A324-5DA2A25FCE26}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
