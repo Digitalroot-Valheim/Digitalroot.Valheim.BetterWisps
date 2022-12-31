@@ -1,0 +1,41 @@
+name: Release
+
+concurrency: ci-${{ github.ref }}
+
+on:
+  push:
+    branches: [ main ] # Default release branch
+    paths:
+      - 'src/**'   
+      - '.github/workflows/**' 
+
+env:
+  DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+
+jobs:
+  call-workflow-nuget-release:
+    if: ${{ false }} # disable for now
+    uses: Digitalroot-Valheim/.github/.github/workflows/nuget.release.yml@main
+    secrets:
+      aws-access-key-id: ${{ secrets.NUGET_S3_REPO_KEY_ID }}
+      aws-secret-access-key: ${{ secrets.NUGET_S3_REPO_KEY_SECRET }}
+      #nexus-api-key: ${{ secrets.NEXUS_API_KEY }}
+      #nexus-cookies-header: ${{ secrets.NEXUS_COOKIE_HEADER }}
+      #nuget-org-key: ${{ secrets.NUGET_ORG_PAT }}
+
+    with:
+      sln-file-name: Digitalroot.Valheim.Common.Placeholder
+      proj-file-name: Digitalroot.Valheim.Common.Placeholder
+      #src-path: src
+      #unit-test-path: UnitTests
+      #skip-unit-tests: true
+      #force-assembly-version: true
+      #create-github-release: false
+      #aws-region: us-west-2
+      #is-nuget-package: false
+      #nuget-gh-upload: true
+      #nuget-s3-upload: true
+      #nuget-org-upload: true
+      #nexus-enable-upload: true
+      #nexus-mod-id: 000
