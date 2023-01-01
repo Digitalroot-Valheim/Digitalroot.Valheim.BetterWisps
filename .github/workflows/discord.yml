@@ -20,4 +20,4 @@ jobs:
     secrets:
       webhook_url: ${{ secrets.VALHEIM_DISCORD_TITANS_WEBHOOK_URL }}
     with:
-      repo_name: Placeholder
+      repo_name: BetterWisps

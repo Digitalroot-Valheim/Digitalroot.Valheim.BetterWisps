@@ -69,11 +69,11 @@ namespace Digitalroot.Valheim.BetterWisps
 
     private static void UpdateWisp()
     {
-      foreach (Recipe recipe in ObjectDB.instance.m_recipes.Where(r => r.m_item?.name == Common.Names.Vanilla.ItemDropNames.Demister))
+      foreach (var recipe in ObjectDB.instance.m_recipes.Where(r => r.m_item?.name == Common.Names.Vanilla.ItemDropNames.Demister))
       {
         // wispLightRecipe.m_resources.FirstOrDefault(r => r.m_resItem)
         var wispRequirement = recipe.m_resources.FirstOrDefault(r => r.m_resItem.name == Common.Names.Vanilla.ItemDropNames.Wisp);
-        if (wispRequirement != null) wispRequirement.m_amountPerLevel = 25;
+        if (wispRequirement != null) wispRequirement.m_amountPerLevel = 5;
         Log.Debug(Instance, $"Updated {recipe.m_item.name} of {recipe.name}, set {wispRequirement?.m_resItem.name} m_amountPerLevel to {wispRequirement?.m_amountPerLevel}");
 
         var silverRequirement = recipe.m_resources.FirstOrDefault(r => r.m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>(Common.Names.Vanilla.ItemDropNames.Silver));
