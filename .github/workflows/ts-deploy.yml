@@ -8,13 +8,15 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    if: ${{ false }}
+    
     steps:
-      - name: Upload Thunderstore Package
       # Use checkout to publish the files in your repo
       - uses: actions/checkout@v3
+        if: ${{ false }}
       # https://github.com/marketplace/actions/upload-thunderstore-package
-      - uses: GreenTF/upload-thunderstore-package@v2.2
+      - name: Upload Thunderstore Package
+        if: ${{ false }}
+        uses: GreenTF/upload-thunderstore-package@v2.2
         with:
           namespace: Digitalroot # the thunderstore 'team' to publish under
           description: Make the Wisp do a better job. 
