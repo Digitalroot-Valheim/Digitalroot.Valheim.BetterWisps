@@ -8,7 +8,7 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
-    if {{ false }}
+    if: ${{ false }}
     steps:
       - name: Upload Thunderstore Package
       # Use checkout to publish the files in your repo
