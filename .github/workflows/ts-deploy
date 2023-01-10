@@ -1,0 +1,24 @@
+name: Publish Mod to TS
+
+# Run when a new release is... released
+on: 
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    if {{ false }}
+    steps:
+      - name: Upload Thunderstore Package
+      # Use checkout to publish the files in your repo
+      - uses: actions/checkout@v3
+      # https://github.com/marketplace/actions/upload-thunderstore-package
+      - uses: GreenTF/upload-thunderstore-package@v2.2
+        with:
+          namespace: Digitalroot # the thunderstore 'team' to publish under
+          description: Make the Wisp do a better job. 
+          token: ${{ secrets.TS_SERVICEACCOUNT }}
+          name: Better_Wisps # the name of the package
+          version: $GITHUB_REF_NAME # Use the tag as the package version
+          community: Valheim
