@@ -1,18 +1,9 @@
-﻿[size=3]Valheim mod to mute Misophonia triggering sounds.    
+﻿[size=3]Adds progression based upgrade options to the wisp to allow it to clear a larger area of mist.
 [/size][b][size=4]
 License
-[/size][/b][size=3][url=https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.MisophoniaFriendly/blob/main/LICENSE]GNU Affero General Public License v3.0[/url][/size][size=3]
+[/size][/b][size=3][url=https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.BetterWisps/blob/main/LICENSE]GNU Affero General Public License v3.0[/url][/size][size=3]
 [/size][size=3]Closed-source license is available for commercial use.[/size]
 
-[b][size=4]Source[/size][/b]
-[size=3][url=https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.MisophoniaFriendly]GitHub[/url][/size]
-
-[b][size=4]Digitalroot's Max Dungeon Rooms[/size][/b]
-[size=3]Mutes Misophonia triggering sounds.   [/size]
-[list]
-[*][size=3]Puke[/size]
-[*][size=3]Eat[/size]
-[/list]
 [b][size=4]Installation (manual)[/size][/b]
 [list=1]
 [*][size=3]Download the latest release archive (zip) file.[/size]
@@ -20,19 +11,18 @@ License
 [/list]
 [b][size=4]Configuration[/size][/b][size=3]
 [/size][list]
-[*][size=3]No need to configure.[/size]
+[*] Base Range - Base clear range of the Wisp Light.
+[*] Increased Range Per Level - How much the clear range is Increased per level of the Wisp Light.
+[*] Max Level - Max level of the Wisp Light.
+[*] Wisps Per Level - Amount of Wisps needed per level.
+[*] Silver Per Level - Amount of Silver needed per level.
 [/list]
 [b][size=4]Issues/Bugs[/size][/b]
-[size=3]Open an issue or bug on the [url=https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.MisophoniaFriendly/issues]issue board[/url]﻿﻿.[/size]
-
-[b][size=4]Questions[/size][/b]
-[size=3]Ask a question on the [url=https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.MisophoniaFriendly/discussions]discussions board[/url]﻿﻿.[/size]
+[size=3]Open an issue or bug on the [url=https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.BetterWisps/issues]issue board[/url]﻿﻿.[/size]
 
 [b][size=4]Support Me[/size][/b] @ [url=https://www.buymeacoffee.com/digitalroot]https://www.buymeacoffee.com/digitalroot[/url]
 
 
 [center][size=3][b][color=#00ffff]Digitalroot can be found in the following Discords[/color][/b][/size]
-[url=https://discord.gg/Xh3UHcDC][img]https://digitalroot.net/img/jvldisc.png[/img][/url]﻿
-[url=https://discord.gg/randyknappmods][img]https://digitalroot.net/img/epiclootdisc.png[/img][/url]﻿
-[url=https://discord.gg/mbkPcvu9ax][img]https://digitalroot.net/img/odinplusdisc.png[/img][/url]﻿
-[/center]
+
+[url=https://discord.gg/Xh3UHcDC][img]https://digitalroot.net/img/jvldisc.png[/img][/url]﻿[url=https://discord.gg/randyknappmods][img]https://digitalroot.net/img/epiclootdisc.png[/img][/url]﻿[url=https://discord.gg/mbkPcvu9ax][img]https://digitalroot.net/img/odinplusdisc.png[/img][/url]﻿[/center]

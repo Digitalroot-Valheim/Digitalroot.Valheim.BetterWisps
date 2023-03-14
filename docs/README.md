@@ -2,13 +2,13 @@
 
 ## Summary
 
-Make the Wisp do a better job. 
+Make the wisps do a better job. 
 
 ## License
 **GNU Affero General Public License v3.0**
 
 ## Details
-Adds upgrade options to the wisp to allow it to clean a larger area of mist.
+Adds progression based upgrade options to the wisp to allow it to clear a larger area of mist.
 
 ### Dependencies
 - <a href="https://valheim.thunderstore.io/package/denikson/BepInExPack_Valheim/"  target="_blank">BepInExPack Valheim</a>
@@ -19,7 +19,11 @@ Adds upgrade options to the wisp to allow it to clean a larger area of mist.
 1. Extract the archive into &lt;Steam Location&gt;\steamapps\common\Valheim\BepInEx\plugins
 
 ### Configuration 
-- No need to configure.
+- **Base Range** - Base clear range of the Wisp Light.
+- **Increased Range Per Level** - How much the clear range is Increased per level of the Wisp Light.
+- **Max Level** - Max level of the Wisp Light.
+- **Wisps Per Level** - Amount of Wisps needed per level.
+- **Silver Per Level** - Amount of Silver needed per level.
 
 ### Issues/Questions/Bugs
 - Use the repo issues tab above.

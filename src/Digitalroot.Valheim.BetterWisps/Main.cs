@@ -22,19 +22,31 @@ namespace Digitalroot.Valheim.BetterWisps
 
     [UsedImplicitly]
     public static ConfigEntry<int> NexusId;
+    public static ConfigEntry<float> BaseRange;
+    public static ConfigEntry<float> IncreasedRangePerLevel;
+    public static ConfigEntry<int> MaxLevel;
+    public static ConfigEntry<int> WispsPerLevel;
+    public static ConfigEntry<int> SilverPerLevel;
 
     public static Main Instance;
 
     public Main()
     {
-      Instance = this;
-      #if DEBUG
-      EnableTrace = true;
-      Log.RegisterSource(Instance);
-      #else
-      EnableTrace = false;
-      #endif
-      Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
+      try
+      {
+        Instance = this;
+        #if DEBUG
+        EnableTrace = true;
+        Log.RegisterSource(Instance);
+        #else
+        EnableTrace = false;
+        #endif
+        Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
+      }
+      catch (Exception ex)
+      {
+        ZLog.LogError(ex);
+      }
     }
 
     [UsedImplicitly]
@@ -43,16 +55,51 @@ namespace Digitalroot.Valheim.BetterWisps
       try
       {
         Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
-        NexusId = Config.Bind("General", "NexusID", 0000, new ConfigDescription("Nexus mod ID for updates", null, new ConfigurationManagerAttributes { Browsable = false, ReadOnly = true }));
+        NexusId = Config.Bind("General", "NexusID", 2150, new ConfigDescription("Nexus mod ID for updates", null, new ConfigurationManagerAttributes { Browsable = false, ReadOnly = true }));
+        BaseRange = Config.Bind("General", "Base Range", 15f, new ConfigDescription("Base clear range of the Wisp Light.", new AcceptableValueRange<float>(0f, 100f), new ConfigurationManagerAttributes { IsAdminOnly = true, Order = 11 }));
+        IncreasedRangePerLevel = Config.Bind("General", "Increased Range Per Level", 5f, new ConfigDescription("How much the clear range is Increased per level of the Wisp Light.", new AcceptableValueRange<float>(0f, 100f), new ConfigurationManagerAttributes { IsAdminOnly = true, Order = 10 }));
+        MaxLevel = Config.Bind("Advanced", "Max Level", 5, new ConfigDescription("Max level of the Wisp Light.", new AcceptableValueRange<int>(1, 25), new ConfigurationManagerAttributes { IsAdminOnly = true, IsAdvanced = true, Order = 4 }));
+        WispsPerLevel = Config.Bind("Advanced", "Wisps Per Level", 5, new ConfigDescription("Amount of Wisps needed per level.", new AcceptableValueRange<int>(1, 50), new ConfigurationManagerAttributes { IsAdminOnly = true, IsAdvanced = true, Order = 3 }));
+        SilverPerLevel = Config.Bind("Advanced", "Silver Per Level", 10, new ConfigDescription("Amount of Silver needed per level.", new AcceptableValueRange<int>(1, 50), new ConfigurationManagerAttributes { IsAdminOnly = true, IsAdvanced = true, Order = 2 }));
         _harmony = Harmony.CreateAndPatchAll(typeof(Main).Assembly, Guid);
-        ItemManager.OnItemsRegisteredFejd  += UpdateWisp;
+        ItemManager.OnItemsRegisteredFejd += OnItemsRegisteredFejd;
       }
       catch (Exception e)
       {
         Log.Error(Instance, e);
       }
     }
-    
+
+    private void OnItemsRegisteredFejd()
+    {
+      try
+      {
+        Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
+        UpdateWisp();
+        MaxLevel.SettingChanged += UpdateSettings;
+        WispsPerLevel.SettingChanged += UpdateSettings;
+        SilverPerLevel.SettingChanged += UpdateSettings;
+        ItemManager.OnItemsRegisteredFejd -= OnItemsRegisteredFejd;
+      }
+      catch (Exception ex)
+      {
+        Log.Error(Instance, ex);
+      }
+    }
+
+    private static void UpdateSettings(object sender, EventArgs e)
+    {
+      try
+      {
+        Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
+        UpdateWisp();
+      }
+      catch (Exception ex)
+      {
+        Log.Error(Instance, ex);
+      }
+    }
+
     [UsedImplicitly]
     private void OnDestroy()
     {
@@ -69,28 +116,32 @@ namespace Digitalroot.Valheim.BetterWisps
 
     private static void UpdateWisp()
     {
-      foreach (var recipe in ObjectDB.instance.m_recipes.Where(r => r.m_item?.name == Common.Names.Vanilla.ItemDropNames.Demister))
+      try
       {
-        // wispLightRecipe.m_resources.FirstOrDefault(r => r.m_resItem)
-        var wispRequirement = recipe.m_resources.FirstOrDefault(r => r.m_resItem.name == Common.Names.Vanilla.ItemDropNames.Wisp);
-        if (wispRequirement != null) wispRequirement.m_amountPerLevel = 5;
-        Log.Debug(Instance, $"Updated {recipe.m_item.name} of {recipe.name}, set {wispRequirement?.m_resItem.name} m_amountPerLevel to {wispRequirement?.m_amountPerLevel}");
+        Log.Trace(Instance, $"{Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
+        foreach (var recipe in ObjectDB.instance.m_recipes.Where(r => r.m_item?.name == Common.Names.Vanilla.ItemDropNames.Demister))
+        {
+          // wispLightRecipe.m_resources.FirstOrDefault(r => r.m_resItem)
+          var wispRequirement = recipe.m_resources.FirstOrDefault(r => r.m_resItem.name == Common.Names.Vanilla.ItemDropNames.Wisp);
+          if (wispRequirement != null) wispRequirement.m_amountPerLevel = WispsPerLevel.Value;
+          Log.Trace(Instance, $"Updated {recipe.m_item.name} of {recipe.name}, set {wispRequirement?.m_resItem.name} m_amountPerLevel to {wispRequirement?.m_amountPerLevel}");
 
-        var silverRequirement = recipe.m_resources.FirstOrDefault(r => r.m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>(Common.Names.Vanilla.ItemDropNames.Silver));
-        if (silverRequirement != null) silverRequirement.m_amountPerLevel = 10;
-        Log.Debug(Instance, $"Updated {recipe.m_item.name} of {recipe.name}, set {silverRequirement?.m_resItem.name} m_amountPerLevel to {silverRequirement?.m_amountPerLevel}");
+          var silverRequirement = recipe.m_resources.FirstOrDefault(r => r.m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>(Common.Names.Vanilla.ItemDropNames.Silver));
+          if (silverRequirement != null) silverRequirement.m_amountPerLevel = SilverPerLevel.Value;
+          Log.Trace(Instance, $"Updated {recipe.m_item.name} of {recipe.name}, set {silverRequirement?.m_resItem.name} m_amountPerLevel to {silverRequirement?.m_amountPerLevel}");
+        }
+
+        var wispLight = ObjectDB.instance.m_items.FirstOrDefault(i => i.name == Common.Names.Vanilla.ItemDropNames.Demister);
+        var itemDrop = wispLight?.GetComponent<ItemDrop>();
+
+        if (itemDrop == null) return;
+        itemDrop.m_itemData.m_shared.m_maxQuality = MaxLevel.Value;
+        Log.Trace(Instance, $"Updated {wispLight.name} set m_maxQuality to {itemDrop.m_itemData.m_shared.m_maxQuality}");
       }
-
-      var wispLight = ObjectDB.instance.m_items.FirstOrDefault(i => i.name == Common.Names.Vanilla.ItemDropNames.Demister);
-      var itemDrop = wispLight?.GetComponent<ItemDrop>();
-
-      if (itemDrop != null)
+      catch (Exception e)
       {
-        itemDrop.m_itemData.m_shared.m_maxQuality = 10;
-        Log.Debug(Instance, $"Updated {wispLight?.name} set m_maxQuality to {itemDrop.m_itemData.m_shared.m_maxQuality}");
+        Log.Error(Instance, e);
       }
-
-      ItemManager.OnItemsRegisteredFejd  -= UpdateWisp;
     }
 
     #region Implementation of ITraceableLogging
