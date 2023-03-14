@@ -4,11 +4,11 @@
     ".NETFramework,Version=v4.6.2": {
       "BepInEx.Core": {
         "type": "Direct",
-        "requested": "[5.4.19, 5.4.19]",
-        "resolved": "5.4.19",
-        "contentHash": "2/eY1qT2LaVO36G91LWo2yNLwmEEODKoC8IpePyA5WP2eGrrMvGxxLC9v4OPmX3IT8q1G4SYzKDL3ziZRQVUWg==",
+        "requested": "[5.4.21, 5.4.21]",
+        "resolved": "5.4.21",
+        "contentHash": "NMUPlbHTTfJ+qIQCI90uIvjuUQ4wnwt4cpRsK3ItBh1DhsWFzAHXNiZjBxZkPysljEKQ2iu89sxMTga4bxBXVQ==",
         "dependencies": {
-          "BepInEx.BaseLib": "5.4.19",
+          "BepInEx.BaseLib": "5.4.20",
           "HarmonyX": "2.7.0"
         }
       },
@@ -80,8 +80,8 @@
       },
       "BepInEx.BaseLib": {
         "type": "Transitive",
-        "resolved": "5.4.19",
-        "contentHash": "gwP3NK0WL5E+U/L0FMrygiDDNzEL4TYnezy+S7ocbUUhkhty3ueG5BRsKdKdra/2R3vWopf42CoA+MnnEmSY+w=="
+        "resolved": "5.4.20",
+        "contentHash": "0bXgYxbCEN2Ixp3kiFEhyw+RASeFQeg/ww+lbMt7if6XMeVS60eg6epNsMA8Jbx57dmNOzNevkKKw8mP8SUMqw=="
       },
       "Digitalroot.Valheim.Common.Json": {
         "type": "Transitive",
