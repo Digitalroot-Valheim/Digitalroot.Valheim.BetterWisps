@@ -15,7 +15,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{1960DCD1-3C51-48FF-BFF8-5FE4C3CBABB2}"
 	ProjectSection(SolutionItems) = preProject
 		..\.github\workflows\discord.yml = ..\.github\workflows\discord.yml
+		..\.github\workflows\nuget.autoupdate.yml = ..\.github\workflows\nuget.autoupdate.yml
 		..\.github\workflows\release.yml = ..\.github\workflows\release.yml
+		..\.github\workflows\ts-deploy.yml = ..\.github\workflows\ts-deploy.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{28344659-BF34-4411-9C48-A3D5C9AFA98E}"
@@ -38,7 +40,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ico", "ico", "{C66A8E3B-31D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Digitalroot.Valheim.BetterWisps", "Digitalroot.Valheim.BetterWisps\Digitalroot.Valheim.BetterWisps.csproj", "{47DDEEE5-9D45-4627-A324-5DA2A25FCE26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{97B7434B-386F-45AE-B80F-AFEBAF96A171}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\UnitTests.csproj", "{97B7434B-386F-45AE-B80F-AFEBAF96A171}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
