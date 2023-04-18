@@ -44,15 +44,15 @@
       },
       "Digitalroot.Valheim.Common.References": {
         "type": "Direct",
-        "requested": "[0.214.303, )",
-        "resolved": "0.214.303",
-        "contentHash": "Mb//cB7mC0biMIIxPuk5Yj3CIUlo3Ie2oRuXbgVSpe2htFcsJ0FhJJtRjs/3v2eBs5dX0TpDSn2QZmVCE+Yzlw=="
+        "requested": "[0.214.305, )",
+        "resolved": "0.214.305",
+        "contentHash": "h/l4OcGiJ9dl9DrN2ji6KnfCexjvK1mAqmjCqKVkMldkScIfG4QAXBiRlgrdCb2rNWhG8tvo52Oce4lKwmD3XA=="
       },
       "Digitalroot.Valheim.Common.Utils": {
         "type": "Direct",
-        "requested": "[1.0.46, )",
-        "resolved": "1.0.46",
-        "contentHash": "Ad1MX7Q2eQLydMqtqg5PRyGyiYJW23jD4u03DmSdmA5mcHkkUGJbVW3cEfVg0Eu14JNCPnLLO3pKkiDFf6AX5Q==",
+        "requested": "[1.0.47, )",
+        "resolved": "1.0.47",
+        "contentHash": "RQHzER1j0ftxyzep+/gzP4XSIvqH62PmpiqtnJDaw/OzuZ5SoDNzrHdsII9pUmjf6BTr5h4MMvOZRunLVLAo6g==",
         "dependencies": {
           "Digitalroot.Valheim.Common.Log": "1.1.42"
         }
@@ -76,6 +76,15 @@
         "contentHash": "VCWQM8q7wZwHMgksBsFfbImRUmlgn7E6EKkrnUV86/keqBvMTjhlA7mBYtz6Dace8XsJYufYJvRP25uur5W5WA==",
         "dependencies": {
           "Fody": "6.3.0"
+        }
+      },
+      "Microsoft.NETFramework.ReferenceAssemblies": {
+        "type": "Direct",
+        "requested": "[1.0.3, )",
+        "resolved": "1.0.3",
+        "contentHash": "vUc9Npcs14QsyOD01tnv/m8sQUnGTGOw1BCmKcv77LBJY7OxhJ+zJF7UD/sCL3lYNFuqmQEVlkfS4Quif6FyYg==",
+        "dependencies": {
+          "Microsoft.NETFramework.ReferenceAssemblies.net462": "1.0.3"
         }
       },
       "BepInEx.BaseLib": {
@@ -104,6 +113,11 @@
         "dependencies": {
           "MonoMod.RuntimeDetour": "21.12.13.1"
         }
+      },
+      "Microsoft.NETFramework.ReferenceAssemblies.net462": {
+        "type": "Transitive",
+        "resolved": "1.0.3",
+        "contentHash": "IzAV30z22ESCeQfxP29oVf4qEo8fBGXLXSU6oacv/9Iqe6PzgHDKCaWfwMBak7bSJQM0F5boXWoZS+kChztRIQ=="
       },
       "Mono.Cecil": {
         "type": "Transitive",
