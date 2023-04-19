@@ -3,6 +3,7 @@ name: Release
 concurrency: ci-${{ github.ref }}
 
 on:
+  workflow_dispatch:
   push:
     branches: [ main ] # Default release branch
     paths-ignore:
@@ -40,3 +41,8 @@ jobs:
       #nuget-org-upload: true
       nexus-enable-upload: true
       nexus-mod-id: 2150
+      ts-enable-upload: true
+      ts-name: Better_Wisps
+      ts-description: "Make the Wisp do a better job."
+      ts-categories: Server-side Client-side Tweaks Gear
+      ts-dependencies: denikson-BepInExPack_Valheim@5.4.2105 ValheimModding-Jotunn@2.11.5      
