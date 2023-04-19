@@ -25,6 +25,7 @@ jobs:
       nexus-api-key: ${{ secrets.NEXUS_API_KEY }}
       nexus-cookie-nxid-header: ${{ secrets.NEXUS_COOKIE_HEADER_NEXUSID }}
       nexus-cookie-sid-header: ${{ secrets.NEXUS_COOKIE_HEADER_SID_DEVELOP }}
+      ts-api-key: ${{ secrets.TS_SERVICEACCOUNT }}
 
     with:
       sln-file-name: Digitalroot.Valheim.BetterWisps
