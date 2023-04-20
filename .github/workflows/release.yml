@@ -40,7 +40,7 @@ jobs:
       #nuget-gh-upload: true
       #nuget-s3-upload: true
       #nuget-org-upload: true
-      nexus-enable-upload: false
+      nexus-enable-upload: true
       nexus-mod-id: 2150
       ts-enable-upload: true
       ts-name: Better_Wisps
