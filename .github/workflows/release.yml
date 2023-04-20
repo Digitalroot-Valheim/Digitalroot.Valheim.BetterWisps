@@ -45,5 +45,5 @@ jobs:
       ts-enable-upload: true
       ts-name: Better_Wisps
       ts-description: "Make the Wisp do a better job."
-      ts-categories: Server-side Client-side Tweaks Gear
+      ts-categories: "server-side client-side mistlands-update tweaks gear" #https://thunderstore.io/api/experimental/community/valheim/category/
       ts-dependencies: denikson-BepInExPack_Valheim@5.4.2105 ValheimModding-Jotunn@2.11.5      
