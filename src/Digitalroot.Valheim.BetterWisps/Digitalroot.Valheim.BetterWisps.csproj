@@ -58,7 +58,7 @@
     <PackageReference Include="Digitalroot.Valheim.Common.Names" Version="1.4.14">
       <IncludeAssets></IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Digitalroot.Valheim.Common.References" Version="0.216.901">
+    <PackageReference Include="Digitalroot.Valheim.Common.References" Version="0.216.902">
       <PrivateAssets>all</PrivateAssets>
       <ExcludeAssets>runtime</ExcludeAssets>
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
