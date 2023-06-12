@@ -28,7 +28,7 @@ namespace Digitalroot.Valheim.BetterWisps
 
           var itemData = Common.Utils.GetLocalPlayer()
                                .GetInventory()
-                               .GetEquipedtems()
+                               .GetEquippedItems()
                                .FirstOrDefault(i => i.m_dropPrefab.name == Common.Names.Vanilla.ItemDropNames.Demister);
 
           if (!__instance.isActiveAndEnabled || itemData == null) return;
