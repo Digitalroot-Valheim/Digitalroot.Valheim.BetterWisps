@@ -26,24 +26,16 @@ jobs:
       nexus-cookie-nxid-header: ${{ secrets.NEXUS_COOKIE_HEADER_NEXUSID }}
       nexus-cookie-sid-header: ${{ secrets.NEXUS_COOKIE_HEADER_SID_DEVELOP }}
       ts-api-key: ${{ secrets.TS_SERVICEACCOUNT }}
+      webhook_url: ${{ secrets.VALHEIM_DISCORD_TITANS_WEBHOOK_URL }}
 
     with:
       sln-file-name: Digitalroot.Valheim.BetterWisps
       proj-file-name: Digitalroot.Valheim.BetterWisps
-      #src-path: src
-      #unit-test-path: UnitTests
-      #skip-unit-tests: true
-      #force-assembly-version: true
-      #create-github-release: false
-      #aws-region: us-west-2
       is-nuget-package: false
-      #nuget-gh-upload: true
-      #nuget-s3-upload: true
-      #nuget-org-upload: true
       nexus-enable-upload: true
       nexus-mod-id: 2150
       ts-enable-upload: true
       ts-name: Better_Wisps
       ts-description: "Make the Wisp do a better job."
       ts-categories: "server-side client-side tweaks" #https://thunderstore.io/api/experimental/community/valheim/category/
-      ts-dependencies: denikson-BepInExPack_Valheim@5.4.2105 ValheimModding-Jotunn@2.11.5      
+      ts-dependencies: ValheimModding-Jotunn-2.20.0

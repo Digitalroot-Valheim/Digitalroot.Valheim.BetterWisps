@@ -14,10 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{E64D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{1960DCD1-3C51-48FF-BFF8-5FE4C3CBABB2}"
 	ProjectSection(SolutionItems) = preProject
-		..\.github\workflows\discord.yml = ..\.github\workflows\discord.yml
 		..\.github\workflows\nuget.autoupdate.yml = ..\.github\workflows\nuget.autoupdate.yml
 		..\.github\workflows\release.yml = ..\.github\workflows\release.yml
-		..\.github\workflows\ts-deploy.yml = ..\.github\workflows\ts-deploy.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{28344659-BF34-4411-9C48-A3D5C9AFA98E}"
