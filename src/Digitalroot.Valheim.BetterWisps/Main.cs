@@ -27,6 +27,7 @@ namespace Digitalroot.Valheim.BetterWisps
     public static ConfigEntry<int> MaxLevel;
     public static ConfigEntry<int> WispsPerLevel;
     public static ConfigEntry<int> SilverPerLevel;
+    public static ConfigEntry<int> EitrPerLevel;
 
     public static Main Instance;
 
@@ -61,6 +62,7 @@ namespace Digitalroot.Valheim.BetterWisps
         MaxLevel = Config.Bind("Advanced", "Max Level", 5, new ConfigDescription("Max level of the Wisp Light.", new AcceptableValueRange<int>(1, 25), new ConfigurationManagerAttributes { IsAdminOnly = true, IsAdvanced = true, Order = 4 }));
         WispsPerLevel = Config.Bind("Advanced", "Wisps Per Level", 5, new ConfigDescription("Amount of Wisps needed per level.", new AcceptableValueRange<int>(1, 50), new ConfigurationManagerAttributes { IsAdminOnly = true, IsAdvanced = true, Order = 3 }));
         SilverPerLevel = Config.Bind("Advanced", "Silver Per Level", 10, new ConfigDescription("Amount of Silver needed per level.", new AcceptableValueRange<int>(1, 50), new ConfigurationManagerAttributes { IsAdminOnly = true, IsAdvanced = true, Order = 2 }));
+        EitrPerLevel = Config.Bind("Advanced", "Eitr Per Level", 0, new ConfigDescription("Amount of Eitr needed per level (only for upgrade).", new AcceptableValueRange<int>(0, 50), new ConfigurationManagerAttributes { IsAdminOnly = true, IsAdvanced = true, Order = 1 }));
         _harmony = Harmony.CreateAndPatchAll(typeof(Main).Assembly, Guid);
         ItemManager.OnItemsRegisteredFejd += OnItemsRegisteredFejd;
       }
@@ -79,6 +81,7 @@ namespace Digitalroot.Valheim.BetterWisps
         MaxLevel.SettingChanged += UpdateSettings;
         WispsPerLevel.SettingChanged += UpdateSettings;
         SilverPerLevel.SettingChanged += UpdateSettings;
+        EitrPerLevel.SettingChanged += UpdateSettings;
         ItemManager.OnItemsRegisteredFejd -= OnItemsRegisteredFejd;
       }
       catch (Exception ex)
@@ -129,6 +132,17 @@ namespace Digitalroot.Valheim.BetterWisps
           var silverRequirement = recipe.m_resources.FirstOrDefault(r => r.m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>(Common.Names.Vanilla.ItemDropNames.Silver));
           if (silverRequirement != null) silverRequirement.m_amountPerLevel = SilverPerLevel.Value;
           Log.Trace(Instance, $"Updated {recipe.m_item.name} of {recipe.name}, set {silverRequirement?.m_resItem.name} m_amountPerLevel to {silverRequirement?.m_amountPerLevel}");
+
+          var eitrRequirement = new Piece.Requirement
+          {
+            m_amount = 0,
+            m_amountPerLevel = EitrPerLevel.Value,
+            m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>(Common.Names.Vanilla.ItemDropNames.Eitr)
+          };
+
+          var addItem = recipe.m_resources.AddItem(eitrRequirement);
+          recipe.m_resources = addItem.ToArray();
+          Log.Trace(Instance, $"Updated {recipe.m_item.name} of {recipe.name}, set {eitrRequirement.m_resItem.name} m_amountPerLevel to {eitrRequirement.m_amountPerLevel}");
         }
 
         var wispLight = ObjectDB.instance.m_items.FirstOrDefault(i => i.name == Common.Names.Vanilla.ItemDropNames.Demister);
