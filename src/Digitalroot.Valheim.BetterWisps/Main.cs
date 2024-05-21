@@ -129,19 +129,23 @@ namespace Digitalroot.Valheim.BetterWisps
           if (wispRequirement != null) wispRequirement.m_amountPerLevel = WispsPerLevel.Value;
           Log.Trace(Instance, $"Updated {recipe.m_item.name} of {recipe.name}, set {wispRequirement?.m_resItem.name} m_amountPerLevel to {wispRequirement?.m_amountPerLevel}");
 
-          var silverRequirement = recipe.m_resources.FirstOrDefault(r => r.m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>(Common.Names.Vanilla.ItemDropNames.Silver));
+          var silverRequirement = recipe.m_resources.FirstOrDefault(r => r.m_resItem == PrefabManager.Cache.GetPrefab<ItemDrop>(Common.Names.Vanilla.ItemDropNames.Silver));
           if (silverRequirement != null) silverRequirement.m_amountPerLevel = SilverPerLevel.Value;
           Log.Trace(Instance, $"Updated {recipe.m_item.name} of {recipe.name}, set {silverRequirement?.m_resItem.name} m_amountPerLevel to {silverRequirement?.m_amountPerLevel}");
 
-          var eitrRequirement = new Piece.Requirement
+          var eitrRequirement = recipe.m_resources.FirstOrDefault(r => r.m_resItem == PrefabManager.Cache.GetPrefab<ItemDrop>(Common.Names.Vanilla.ItemDropNames.Eitr));
+          if (eitrRequirement != null) eitrRequirement.m_amountPerLevel = EitrPerLevel.Value;
+          else
           {
-            m_amount = 0,
-            m_amountPerLevel = EitrPerLevel.Value,
-            m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>(Common.Names.Vanilla.ItemDropNames.Eitr)
-          };
-
-          var addItem = recipe.m_resources.AddItem(eitrRequirement);
-          recipe.m_resources = addItem.ToArray();
+            eitrRequirement = new Piece.Requirement
+            {
+              m_amount = 0,
+              m_amountPerLevel = EitrPerLevel.Value,
+              m_resItem = PrefabManager.Cache.GetPrefab<ItemDrop>(Common.Names.Vanilla.ItemDropNames.Eitr)
+            };
+            var addItem = recipe.m_resources.AddItem(eitrRequirement);
+            recipe.m_resources = addItem.ToArray();
+          }
           Log.Trace(Instance, $"Updated {recipe.m_item.name} of {recipe.name}, set {eitrRequirement.m_resItem.name} m_amountPerLevel to {eitrRequirement.m_amountPerLevel}");
         }
 
