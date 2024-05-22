@@ -38,6 +38,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\..\..\..\..\..\..\..\..\Program Files %28x86%29\Steam\steamapps\common\Valheim\BepInEx\config\digitalroot.mods.betterWisps.cfg" Link="digitalroot.mods.betterWisps.cfg" />
     <None Include="FodyWeavers.xsd" />
   </ItemGroup>
 
