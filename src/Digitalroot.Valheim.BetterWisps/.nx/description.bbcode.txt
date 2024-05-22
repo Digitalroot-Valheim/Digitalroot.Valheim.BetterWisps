@@ -16,6 +16,7 @@ License
 [*] Max Level - Max level of the Wisp Light.
 [*] Wisps Per Level - Amount of Wisps needed per level.
 [*] Silver Per Level - Amount of Silver needed per level.
+[*] Eitr Per Level - Amount of Eitr needed per level (only for upgrade).
 [/list]
 [b][size=4]Issues/Bugs[/size][/b]
 [size=3]Open an issue or bug on the [url=https://github.com/Digitalroot-Valheim/Digitalroot.Valheim.BetterWisps/issues]issue board[/url]﻿﻿.[/size]
