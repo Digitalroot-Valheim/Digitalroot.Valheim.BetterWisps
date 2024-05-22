@@ -24,7 +24,7 @@ Adds progression based upgrade options to the wisp to allow it to clear a larger
 - **Max Level** - Max level of the Wisp Light.
 - **Wisps Per Level** - Amount of Wisps needed per level.
 - **Silver Per Level** - Amount of Silver needed per level.
-- **Eitr Per Level** - Amount of Eitr need per level (only for upgrade).
+- **Eitr Per Level** - Amount of Eitr needed per level (only for upgrade).
 
 ### Issues/Questions/Bugs
 - Use the repo issues tab above.
