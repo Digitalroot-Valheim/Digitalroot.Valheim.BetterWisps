@@ -55,17 +55,17 @@
       <ExcludeAssets>runtime</ExcludeAssets>
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Digitalroot.Valheim.Common.Log" Version="1.1.54" />
-    <PackageReference Include="Digitalroot.Valheim.Common.Names" Version="1.4.35">
+    <PackageReference Include="Digitalroot.Valheim.Common.Log" Version="1.1.55" />
+    <PackageReference Include="Digitalroot.Valheim.Common.Names" Version="1.4.40">
       <IncludeAssets></IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Digitalroot.Valheim.Common.References" Version="0.218.16">
+    <PackageReference Include="Digitalroot.Valheim.Common.References" Version="0.219.14">
       <PrivateAssets>all</PrivateAssets>
       <ExcludeAssets>runtime</ExcludeAssets>
       <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Digitalroot.Valheim.Common.Utils" Version="1.0.65" />
-    <PackageReference Include="Digitalroot.Valheim.References.JvL" Version="2.20.0" />
+    <PackageReference Include="Digitalroot.Valheim.Common.Utils" Version="1.0.66" />
+    <PackageReference Include="Digitalroot.Valheim.References.JvL" Version="2.21.3" />
     <PackageReference Include="ErrorProne.NET.CoreAnalyzers" Version="0.1.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
