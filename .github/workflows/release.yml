@@ -32,10 +32,12 @@ jobs:
       sln-file-name: Digitalroot.Valheim.BetterWisps
       proj-file-name: Digitalroot.Valheim.BetterWisps
       is-nuget-package: false
+      skip-unit-tests: true
       nexus-enable-upload: true
       nexus-mod-id: 2150
+      nexus-mod-file-id: 2461972
       ts-enable-upload: true
       ts-name: Better_Wisps
       ts-description: "Make the Wisp do a better job."
       ts-categories: "server-side client-side tweaks" #https://thunderstore.io/api/experimental/community/valheim/category/
-      ts-dependencies: ValheimModding-Jotunn-2.20.0
+      ts-dependencies: ValheimModding-Jotunn-2.29.2
