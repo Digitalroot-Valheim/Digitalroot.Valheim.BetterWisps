@@ -40,4 +40,4 @@ jobs:
       ts-name: Better_Wisps
       ts-description: "Make the Wisp do a better job."
       ts-categories: "server-side client-side tweaks" #https://thunderstore.io/api/experimental/community/valheim/category/
-      ts-dependencies: ValheimModding-Jotunn-2.29.2
+      ts-dependencies: ValheimModding-Jotunn-2.30.0
