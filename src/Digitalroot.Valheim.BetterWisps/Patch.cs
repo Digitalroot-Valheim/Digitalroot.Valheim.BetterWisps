@@ -1,8 +1,8 @@
-﻿using Digitalroot.Valheim.Common;
+﻿using Digitalroot.Modding.Framework.Logging;
+using Digitalroot.Modding.Framework.Utils;
 using HarmonyLib;
 using JetBrains.Annotations;
 using System;
-using System.Linq;
 using System.Reflection;
 
 namespace Digitalroot.Valheim.BetterWisps
@@ -17,25 +17,41 @@ namespace Digitalroot.Valheim.BetterWisps
       [HarmonyPostfix, HarmonyPriority(Priority.Normal)]
       [HarmonyPatch(typeof(Demister), nameof(Demister.OnEnable))]
       // ReSharper disable once InconsistentNaming
-      public static void Postfix([NotNull] ref Demister __instance)
+      public static void OnEnablePostfix([NotNull] Demister __instance)
       {
         try
         {
-          Log.Trace(Main.Instance, $"{Main.Namespace}.{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
-          if (Common.Utils.IsHeadless()) return;
-          if (!Common.Utils.IsZNetSceneReady()) return;
-          if (!Common.Utils.IsPlayerReady()) return;
+          if (Main.Instance.EnableTrace) Log.Trace(Main.Instance, $"{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
+          if (ValheimUtils.IsHeadless()
+              || !ValheimUtils.IsZNetSceneReady()
+              || !ValheimUtils.IsPlayerReady()
+             )
+            return;
 
-          var itemData = Common.Utils.GetLocalPlayer()
-                               .GetInventory()
-                               .GetEquippedItems()
-                               .FirstOrDefault(i => i.m_dropPrefab.name == Common.Names.Vanilla.ItemDropNames.Demister);
+          Main.DemisterInstance = __instance;
+          Main.DemisterOnEnable();
+        }
+        catch (Exception ex)
+        {
+          Log.Error(Main.Instance, ex);
+        }
+      }
 
-          if (!__instance.isActiveAndEnabled || itemData == null) return;
-          __instance.m_forceField.endRange = Main.BaseRange.Value + (Main.IncreasedRangePerLevel.Value * (itemData.m_quality - 1));
+      [HarmonyPostfix, HarmonyPriority(Priority.Normal)]
+      [HarmonyPatch(typeof(Demister), nameof(Demister.OnDisable))]
+      // ReSharper disable once InconsistentNaming
+      public static void GetMovedDistancePostfix([NotNull] Demister __instance)
+      {
+        try
+        {
+          if (Main.Instance.EnableTrace) Log.Trace(Main.Instance, $"{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}");
+          if (ValheimUtils.IsHeadless()
+              || !ValheimUtils.IsZNetSceneReady()
+              || !ValheimUtils.IsPlayerReady()
+             )
+            return;
 
-          Log.Trace(Main.Instance, $"[{MethodBase.GetCurrentMethod()?.DeclaringType?.Name}.{MethodBase.GetCurrentMethod()?.Name}] Updated {itemData.m_dropPrefab.name} range to {__instance.m_forceField.endRange}.");
-          // __instance.m_forceField.gravity = 1f + itemDrop.m_itemData.m_quality;
+          Main.DemisterInstance = null;
         }
         catch (Exception ex)
         {

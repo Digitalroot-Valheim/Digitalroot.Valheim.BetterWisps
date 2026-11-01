@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.9.12120.119 stable
+VisualStudioVersion = 18.9.12120.119
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E5C5D2B9-639B-48CF-B5B0-E44FD7F24B1E}"
 	ProjectSection(SolutionItems) = preProject
@@ -20,20 +20,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{28344659-BF34-4411-9C48-A3D5C9AFA98E}"
 	ProjectSection(SolutionItems) = preProject
+		..\docs\CHANGELOG.md = ..\docs\CHANGELOG.md
 		..\docs\README.md = ..\docs\README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ico", "ico", "{C66A8E3B-31DB-4296-9DF3-78F55E2580E5}"
 	ProjectSection(SolutionItems) = preProject
 		ico\icon.png = ico\icon.png
-		ico\icon_greendot.gif = ico\icon_greendot.gif
-		ico\icon_reddot.gif = ico\icon_reddot.gif
-		ico\icon_yellowdot.gif = ico\icon_yellowdot.gif
-		ico\ValheimRcon.xcf = ico\ValheimRcon.xcf
-		ico\ValheimRcon_black.ico = ico\ValheimRcon_black.ico
-		ico\ValheimRcon_black.png = ico\ValheimRcon_black.png
-		ico\ValheimRcon_color.ico = ico\ValheimRcon_color.ico
-		ico\ValheimRcon_color.png = ico\ValheimRcon_color.png
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Digitalroot.Valheim.BetterWisps", "Digitalroot.Valheim.BetterWisps\Digitalroot.Valheim.BetterWisps.csproj", "{47DDEEE5-9D45-4627-A324-5DA2A25FCE26}"
