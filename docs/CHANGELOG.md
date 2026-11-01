@@ -4,7 +4,7 @@
 - Added DMF
 - Setting changes update the `Demister` in real time.
 - GUID changed to `digitalroot.betterwisps`
-- cfg file auto renames from `digitalroot.mod.betterWisps` to `digitalroot.betterwisps`
+- cfg file auto renames from `digitalroot.mod.betterWisps.cfg` to `digitalroot.betterwisps.cfg`
 
 ## v1.0.44
 - Update to Valheim 1.0.12
