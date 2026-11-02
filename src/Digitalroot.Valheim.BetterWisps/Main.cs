@@ -49,9 +49,9 @@ namespace Digitalroot.Valheim.BetterWisps
         // ReSharper disable once ReplaceWithSingleAssignment.False
         var needToReload = false;
         // ReSharper disable once ConvertIfToOrExpression
-        if (ValheimUtils.HandleConfigFileRename(Config.ConfigFilePath, "digitalroot.mods.betterWisps.cfg")) needToReload = true;
+        if (ValheimUtils.HandleConfigFileRename(Config.ConfigFilePath, "digitalroot.mods.betterWisps.cfg", Instance)) needToReload = true;
         // ReSharper disable once StringLiteralTypo
-        if (ValheimUtils.HandleConfigFileRename(Config.ConfigFilePath, "digitalroot.mods.betterwisps.cfg")) needToReload = true;
+        if (ValheimUtils.HandleConfigFileRename(Config.ConfigFilePath, "digitalroot.mods.betterwisps.cfg", Instance)) needToReload = true;
         // ReSharper disable once InvertIf
         if (needToReload)
         {

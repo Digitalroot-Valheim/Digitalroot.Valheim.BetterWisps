@@ -1,3 +1,6 @@
+## v1.0.46
+- Cleaned up trace logs on start up.
+
 ## v1.0.45
 - Update to Valheim 1.0.21
 - Fixed NRE on Shutdown
